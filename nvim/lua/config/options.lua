@@ -11,6 +11,8 @@ vim.opt.winborder = "solid"
 vim.opt.fillchars = { eob = " " }
 vim.opt.cmdheight = 0
 
+vim.opt.fileformats = { "unix", "dos", "mac" }
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
@@ -54,9 +56,7 @@ vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldlevel = 99
-vim.opt.foldtext = ""
-vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
+vim.opt.foldenable = false
 
 vim.opt.laststatus = 3
 

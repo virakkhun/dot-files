@@ -72,6 +72,7 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.SendString("clear\n"),
 	},
+	-- pane switching
 	{
 		key = "]",
 		mods = "CMD",
@@ -92,6 +93,17 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
+	{
+		key = "p",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivateTabRelative(-1),
+	},
+	{
+		key = "n",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivateTabRelative(1),
+	},
+	-- cursor movement
 	{ key = "h", mods = "CMD", action = wezterm.action.SendKey({ key = "LeftArrow" }) },
 	{ key = "j", mods = "CMD", action = wezterm.action.SendKey({ key = "DownArrow" }) },
 	{ key = "k", mods = "CMD", action = wezterm.action.SendKey({ key = "UpArrow" }) },

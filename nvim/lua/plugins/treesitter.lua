@@ -6,6 +6,10 @@ local filetypes = {
 	"typescript",
 	"javascript",
 	"sql",
+	"go",
+	"php",
+	"tsx",
+	"jsx",
 }
 
 local function includes(tbl, value)
@@ -28,3 +32,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 	end,
 })
+
+-- In your configuration initialization
+require("nvim-treesitter").setup()
