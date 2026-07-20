@@ -1,4 +1,7 @@
 vim.g.blink_cmp_debug = true
+vim.g.markdown_fenced_languages = {
+	"ts=typescript",
+}
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -54,12 +57,19 @@ vim.opt.wildmode = "longest:full,full"
 vim.opt.wildignorecase = true
 vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
 
+function _G.my_foldtext()
+	local line = vim.fn.getline(vim.v.foldstart)
+	line = line:gsub("^%s*", "")
+	return string.format(" %s", line)
+end
+
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldenable = false
+vim.opt.foldtext = "v:lua.my_foldtext()"
 
 vim.opt.laststatus = 3
-
-vim.g.markdown_fenced_languages = {
-	"ts=typescript",
-}
+vim.opt.conceallevel = 2

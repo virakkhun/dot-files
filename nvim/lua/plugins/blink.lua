@@ -1,6 +1,8 @@
 require("blink.cmp").setup({
 	keymap = {
 		preset = "enter",
+		["<C-j>"] = { "select_next", "fallback" },
+		["<C-k>"] = { "select_prev", "fallback" },
 		["<C-x>"] = {
 			function(cmp)
 				cmp.show()

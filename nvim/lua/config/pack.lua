@@ -12,4 +12,9 @@ vim.pack.add({
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/lewis6991/gitsigns.nvim",
+	{
+		src = "https://github.com/obsidian-nvim/obsidian.nvim",
+		version = vim.version.range("*"), -- use latest release, remove to use latest commit
+	},
+	"https://github.com/nvim-lua/plenary.nvim",
 })

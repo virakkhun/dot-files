@@ -52,7 +52,7 @@ for _, map in ipairs(mappings) do
 	vim.keymap.set("n", map[1], map[2], { desc = table.insert(opt, { desc = map.desc }) })
 end
 
--- terminal
+-- keymaps:terminal
 vim.keymap.set("n", "<leader>t", function()
 	vim.cmd("belowright 12split")
 	vim.cmd("set winfixheight")
@@ -63,3 +63,15 @@ vim.keymap.set("n", "<leader>t", function()
 	vim.cmd("startinsert")
 end, { noremap = true, silent = true })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { desc = "Exit terminal", noremap = true, silent = true })
+
+-- keymaps:diagnostic
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
+
+-- keymaps:obsidian
+vim.keymap.set("n", "<leader>ow", "<cmd>Obsidian workspace<CR>")
+vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<CR>")
+vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<CR>")
+vim.keymap.set("n", "<leader>oy", "<cmd>Obsidian yesterday<CR>")
+vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<CR>")
+vim.keymap.set("n", "<leader>oq", "<cmd>Obsidian quick_switch<CR>")

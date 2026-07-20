@@ -28,6 +28,10 @@ return {
 			suggestionActions = {
 				enabled = false,
 			},
+			implicitProjectConfig = {
+				strictNullChecks = true,
+				strict = true,
+			},
 		},
 		typescript = {
 			-- preferences = {
@@ -35,6 +39,11 @@ return {
 			-- },
 			suggestionActions = {
 				enabled = false,
+			},
+
+			implicitProjectConfig = {
+				strictNullChecks = true,
+				strict = true,
 			},
 			-- disable jsdoc @returns
 			suggest = {
